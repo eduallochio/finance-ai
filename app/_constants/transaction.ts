@@ -11,7 +11,7 @@ export const TRANSACTION_CATEGORY_LABELS = {
   HEALTH: "Saúde",
   HOUSING: "Moradia",
   INVESTMENTS: "Investimentos",
-  OTHERS: "Outros",
+  OTHER: "Outro",
   TRANSPORTATION: "Transporte",
   UTILITY: "Utilidades",
   SALARY: "Salário",
