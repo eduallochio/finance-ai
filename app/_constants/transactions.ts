@@ -10,21 +10,19 @@ export const TRANSACTION_CATEGORY_LABELS = {
   FOOD: "Alimentação",
   HEALTH: "Saúde",
   HOUSING: "Moradia",
-  INVESTMENTS: "Investimentos",
-  OTHER: "Outro",
+  OTHER: "Outros",
+  SALARY: "Salário",
   TRANSPORTATION: "Transporte",
   UTILITY: "Utilidades",
-  SALARY: "Salário",
-  // TRAVEL: "Viagem",
 };
 
-export const TRANSACTION_PAYMANT_METHOD_LABELS = {
+export const TRANSACTION_PAYMENT_METHOD_LABELS = {
   BANK_TRANSFER: "Transferência Bancária",
   BANK_SLIP: "Boleto Bancário",
   CASH: "Dinheiro",
   CREDIT_CARD: "Cartão de Crédito",
   DEBIT_CARD: "Cartão de Débito",
-  OTHER: "Outro",
+  OTHER: "Outros",
   PIX: "Pix",
 };
 
@@ -47,34 +45,34 @@ export const TRANSACTION_PAYMENT_METHOD_OPTIONS = [
   {
     value: TransactionPaymentMethod.BANK_TRANSFER,
     label:
-      TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.BANK_TRANSFER],
+      TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.BANK_TRANSFER],
   },
   {
     value: TransactionPaymentMethod.BANK_SLIP,
     label:
-      TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.BANK_SLIP],
+      TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.BANK_SLIP],
   },
   {
     value: TransactionPaymentMethod.CASH,
-    label: TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.CASH],
+    label: TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.CASH],
   },
   {
     value: TransactionPaymentMethod.CREDIT_CARD,
     label:
-      TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.CREDIT_CARD],
+      TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.CREDIT_CARD],
   },
   {
     value: TransactionPaymentMethod.DEBIT_CARD,
     label:
-      TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.DEBIT_CARD],
+      TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.DEBIT_CARD],
   },
   {
     value: TransactionPaymentMethod.OTHER,
-    label: TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.OTHER],
+    label: TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.OTHER],
   },
   {
     value: TransactionPaymentMethod.PIX,
-    label: TRANSACTION_PAYMANT_METHOD_LABELS[TransactionPaymentMethod.PIX],
+    label: TRANSACTION_PAYMENT_METHOD_LABELS[TransactionPaymentMethod.PIX],
   },
 ];
 

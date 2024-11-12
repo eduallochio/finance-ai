@@ -4,11 +4,12 @@ import { ColumnDef } from "@tanstack/react-table";
 import TransactionTypeBadge from "../_components/type-bage";
 import { Button } from "@/app/_components/ui/button";
 import { TrashIcon } from "lucide-react";
+
+import EditTransactionButton from "../_components/edit-transaction-button";
 import {
   TRANSACTION_CATEGORY_LABELS,
-  TRANSACTION_PAYMANT_METHOD_LABELS,
-} from "@/app/_constants/transaction";
-import EditTransactionButton from "../_components/edit-transaction-button";
+  TRANSACTION_PAYMENT_METHOD_LABELS,
+} from "@/app/_constants/transactions";
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
   {
@@ -32,7 +33,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     accessorKey: "paymentMethod",
     header: "Método de Pagamento",
     cell: ({ row: { original: transaction } }) =>
-      TRANSACTION_PAYMANT_METHOD_LABELS[transaction.paymentMethod],
+      TRANSACTION_PAYMENT_METHOD_LABELS[transaction.paymentMethod],
   },
   {
     accessorKey: "date",
