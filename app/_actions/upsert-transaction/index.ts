@@ -29,11 +29,11 @@ export const upsertTransaction = async (params: UpsertTransactionParams) => {
   if (params.id) {
     // Se `id` estiver definido, use o método `upsert`.
     await db.transaction.upsert({
-      where: {
-        id: params.id,
-      },
       update: { ...params, userId },
       create: { ...params, userId },
+      where: {
+        id: params.id ?? "",
+      },
     });
   } else {
     // Se `id` não estiver definido, crie uma nova transação.
