@@ -4,13 +4,14 @@ import {
   TrendingUpIcon,
   WalletIcon,
 } from "lucide-react";
-import SummeryCard from "./summery-card";
+
 import { db } from "@/app/_lib/prisma";
+import SummaryCard from "./summary-card";
 
 interface SummeryCards {
   month: string;
 }
-const SummeryCards = async ({ month }: SummeryCards) => {
+const SummaryCards = async ({ month }: SummeryCards) => {
   const where = {
     date: {
       gte: new Date(`${month}-01`),
@@ -61,28 +62,30 @@ const SummeryCards = async ({ month }: SummeryCards) => {
 
   return (
     <div className="space-y-6">
-      {/*PRIMEIRO CARD*/}
-      <SummeryCard
+      {/* PRIMEIRO CARD */}
+
+      <SummaryCard
         icon={<WalletIcon size={16} />}
         title="Saldo"
         amount={balance}
         size="large"
       />
-      {/**OUTROS CARDS */}
+
+      {/* OUTROS CARDS */}
       <div className="grid grid-cols-3 gap-6">
-        <SummeryCard
+        <SummaryCard
           icon={<PiggyBankIcon size={16} />}
           title="Investido"
           amount={investmentsTotal}
         />
-        <SummeryCard
+        <SummaryCard
           icon={<TrendingUpIcon size={16} className="text-primary" />}
-          title="Receitas"
+          title="Receita"
           amount={depositsTotal}
         />
-        <SummeryCard
+        <SummaryCard
           icon={<TrendingDownIcon size={16} className="text-red-500" />}
-          title="Investido"
+          title="Despesas"
           amount={expensesTotal}
         />
       </div>
@@ -90,4 +93,4 @@ const SummeryCards = async ({ month }: SummeryCards) => {
   );
 };
 
-export default SummeryCards;
+export default SummaryCards;

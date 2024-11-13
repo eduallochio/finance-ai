@@ -2,9 +2,9 @@ import { auth } from "@clerk/nextjs/server";
 
 import { redirect } from "next/navigation";
 import Navibar from "../_components/navbar";
-import SummeryCards from "./_components/summery-cards";
 import TimeSelect from "./_components/time-selects";
 import { isMatch } from "date-fns";
+import SummaryCards from "./_components/summary-cards";
 
 interface HomeProps {
   searchParams: {
@@ -17,9 +17,9 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   if (!userId) {
     redirect("/login");
   }
-  const monthIsInvalid = !month || isMatch(month, "MM");
+  const monthIsInvalid = !month || !isMatch(month, "MM");
   if (monthIsInvalid) {
-    redirect("/?month=01");
+    redirect(`?month=${new Date().getMonth() + 1}`);
   }
   return (
     <>
@@ -30,7 +30,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
           <TimeSelect />
         </div>
       </div>
-      <SummeryCards month={month} />
+      <SummaryCards month={month} />
     </>
   );
 };
